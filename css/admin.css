@@ -125,19 +125,25 @@ button {
 
     flex-direction: column;
 }
-
-
 .sidebar-logo {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;                             /* Khoảng cách giữa ảnh logo và chữ */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-    padding: 0 15px;
+.sidebar-logo-img {
+    height: 36px;                          /* Kích thước ảnh vừa vặn thanh sidebar */
+    width: auto;
+    object-fit: contain;
+}
 
-    margin-bottom: 40px;
-
-    font-size: 28px;
-
-    font-weight: bold;
-
-    color: #60a5fa;
+.sidebar-logo span {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;                        /* Màu chữ đi kèm logo */
+    letter-spacing: 1px;
 }
 
 
@@ -1023,53 +1029,34 @@ button {
    768px <= WIDTH < 1024px
 ===================================================== */
 
-@media (max-width: 1024px) {
-
+@media (min-width: 768px) and (max-width: 1023px) {
     .dashboard {
-
-        grid-template-columns:
-            210px 1fr;
+        grid-template-columns: 210px 1fr;
     }
 
-
     .main-content {
-
         padding: 25px;
     }
 
-
     .stats {
-
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-
 
     .content-grid {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
-
     .profile-card {
-
         text-align: left;
     }
 
-
     .profile-avatar {
-
         margin-left: 0;
     }
 
-
     .quick-actions {
-
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 
@@ -1078,133 +1065,83 @@ button {
    WIDTH < 768px
 ===================================================== */
 
-@media (max-width: 768px) {
-
+@media (max-width: 767px) {
     .dashboard {
-
         display: block;
     }
 
-
     .sidebar {
-
         min-height: auto;
-
         padding: 20px;
     }
 
-
     .sidebar-logo {
-
         margin-bottom: 20px;
     }
 
-
     .admin-profile {
-
         margin-bottom: 15px;
     }
 
-
     .sidebar-menu {
-
         display: grid;
-
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
-
     .sidebar-bottom {
-
         display: grid;
-
-        grid-template-columns:
-            1fr 1fr;
-
+        grid-template-columns: 1fr 1fr;
         gap: 8px;
-
         margin-top: 15px;
     }
 
-
     .main-content {
-
         padding: 20px;
     }
 
-
     .topbar {
-
         align-items: flex-start;
-
         flex-direction: column;
     }
 
-
     .topbar h1 {
-
         font-size: 28px;
     }
 
-
     .stats {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
-
 
     .content-grid {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
-
     .table-header {
-
         display: none;
     }
 
-
     .project-row {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
         gap: 10px;
-
         padding: 20px;
     }
 
-
     .status {
-
         width: fit-content;
     }
 
-
     .quick-actions {
-
-        grid-template-columns:
-            1fr;
+        grid-template-columns: 1fr;
     }
 
-
     .card-header {
-
         align-items: flex-start;
-
         flex-direction: column;
     }
 
-
     .card-header button {
-
         width: 100%;
     }
-
 }
 
 
