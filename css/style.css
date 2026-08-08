@@ -1,6 +1,40 @@
 /* =========================================
    CSS VARIABLES
 ========================================= */
+/* Container chứa cả Logo và Chữ */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;                         /* Khoảng cách giữa icon và chữ */
+    text-decoration: none;
+}
+
+/* Ảnh Logo: Xử lý hiệu ứng và bo góc cho phần ô đen bớt thô */
+.logo-img {
+    height: 40px;                      /* Kích thước vừa tầm Header */
+    width: 40px;
+    object-fit: contain;
+    border-radius: 8px;                /* Bo tròn nhẹ góc ô đen */
+    transition: transform 0.3s ease;
+}
+
+/* Hiệu ứng phóng nhẹ khi di chuột */
+.logo:hover .logo-img {
+    transform: scale(1.08);
+}
+
+/* Chữ đi kèm Logo */
+.logo-text {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;                     /* Màu chữ tối sang trọng */
+    letter-spacing: 0.5px;
+}
+
+/* Dấu chấm màu tím/xanh tạo điểm nhấn */
+.logo-text span {
+    color: var(--primary-color, #2563eb);
+}
 
 :root {
 
@@ -398,6 +432,17 @@ ul {
 .python-skill {
     width: 70%;
 }
+.project-image {
+    height: 200px;
+    overflow: hidden; /* Cắt phần dư thừa của ảnh */
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh vừa vặn đẹp mắt không bị méo */
+    display: block;
+}
 /* =========================================
    PROJECTS
 ========================================= */
@@ -567,10 +612,9 @@ ul {
     text-align: center;
 }
 /* =========================================
-   TABLET
+   TABLET (768px <= Width < 1024px)
 ========================================= */
-
-@media (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 
     .navbar {
         padding: 18px 20px;
@@ -581,37 +625,37 @@ ul {
     }
 
     .skills-list {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .project-list {
-        grid-template-columns:
-            repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
 }
-/* =========================================
-   MOBILE
-========================================= */
 
-@media (max-width: 768px) {
+/* =========================================
+   MOBILE (Width < 768px)
+========================================= */
+@media (max-width: 767px) {
 
     .navbar {
         flex-direction: column;
-
         gap: 20px;
+    }
+
+    .login-btn {
+        width: 100%;
+        text-align: center;
     }
 
     .nav-links {
         flex-direction: column;
-
         gap: 12px;
     }
 
     .hero {
         min-height: 600px;
-
         padding: 60px 20px;
     }
 
@@ -625,7 +669,6 @@ ul {
 
     .hero-buttons {
         flex-direction: column;
-
         align-items: center;
     }
 
@@ -635,7 +678,6 @@ ul {
 
     .about-info {
         width: 100%;
-
         grid-template-columns: 1fr;
     }
 
@@ -650,5 +692,7 @@ ul {
     .contact-content {
         flex-direction: column;
     }
+
+    
 
 }
